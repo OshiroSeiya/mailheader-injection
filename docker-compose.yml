@@ -1,0 +1,16 @@
+version: '2'
+services:
+  smtp:
+    image: sj26/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    restart: always
+  php:
+    build: .
+    ports:
+      - '80:80'
+    restart: always
+    volumes:
+      - ./html:/var/www/html
+    #   - ./php.ini /usr/local/etc/php/
