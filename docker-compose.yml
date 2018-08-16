@@ -13,4 +13,3 @@ services:
     restart: always
     volumes:
       - ./html:/var/www/html
-    #   - ./php.ini /usr/local/etc/php/
