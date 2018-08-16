@@ -15,6 +15,3 @@ http://localhost
 メールの受信確認
 http://localhost:1080
 
-# 脆弱性の確認手順
-
-Fromに`aaa%0d%0aCc:%20aaa`など改行コードつけると刺さる
