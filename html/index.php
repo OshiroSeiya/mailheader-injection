@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
   <h1>メールヘッダーインジェクションのサンプル</h1>
   <p>
     Burp の Intercept などで from の値を<span><b>example-from%40example.com%0d%0aCc:%20example-cc%40example.com</b></span>に変更すると<br />
-    <a href="http://localhost:1080" target="_blank" rel="noreferrer noopener">メーラー</a>でヘッダーが分割されてることを確認できます。
+    <a href=<?= "http://${_SERVER['HTTP_HOST']}:1080"?> target="_blank" rel="noreferrer noopener">メーラー</a>でヘッダーが分割されてることを確認できます。
   </p>
   <from>
   <form method="post">
