@@ -43,4 +43,4 @@ http://localhost:1080
 
 # phpのバージョン切り替え方
 
-`Dockerfile` の `FROM php:7.2.8-apache` の値を[dockerhub](https://hub.docker.com/r/library/php/)を参考に変更しサイトを一度止めて再度起動することで切り替えることができます
+`Dockerfile` の `FROM php:7.2.9-apache` の値を[dockerhub](https://hub.docker.com/r/library/php/)を参考に変更しサイトを一度止めて再度起動することで切り替えることができます
