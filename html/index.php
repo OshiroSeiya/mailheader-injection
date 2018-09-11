@@ -24,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     Burp の Intercept などで from の値を<span><b>example-from%40example.com%0d%0aCc:%20example-cc%40example.com</b></span>に変更すると<br />
     <a href=<?= "http://${_SERVER['HTTP_HOST']}:1080"?> target="_blank" rel="noreferrer noopener">メーラー</a>でヘッダーが分割されてることを確認できます。
   </p>
-  <from>
   <form method="post">
     <label for="from">From:</label>
     <input type = "text" id="from" name="from" value="example-from@example.com"><br/>
